@@ -1,0 +1,158 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+def quashProperties = new Properties()
+file("quash.properties").withInputStream { stream ->
+    quashProperties.load(stream)
+}
+
+android {
+    namespace 'com.quash.bugs'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
+
+        buildConfigField "String", "FIREBASE_API_KEY", "\"" + quashProperties['FirebaseApiKey'] + "\""
+        buildConfigField "String", "FIREBASE_APP_ID", "\"" + quashProperties['FirebaseAppId'] + "\""
+        buildConfigField "String", "FIREBASE_PROJECT_ID", "\"" + quashProperties['FirebaseProjectId'] + "\""
+        buildConfigField "String", "AMPLITUDE_API_KEY", "\"" + quashProperties['AmplitudeKey'] + "\""
+        buildConfigField "String", "SDK_VERSION", "\"" + quashProperties['SdkVersion'] + "\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL","\"" + quashProperties['ReleaseBaseUrl'] + "\""
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"" + quashProperties['DebugBaseUrl'] + "\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+// Define dependency versions
+ext {
+    // AndroidX and Core Libraries
+    coreKtxVersion = '1.13.1'
+    appcompatVersion = '1.3.0'
+    constraintLayoutVersion = '2.1.4'
+    materialVersion = '1.12.0'
+
+    // ViewModel and Lifecycle
+    lifecycleVersion = '2.7.0'
+    fragmentKtxVersion = '1.7.1'
+
+    // Room Database
+    roomVersion = '2.6.1'
+    workRuntimeVersion = '2.9.0'
+
+    // Dagger
+    daggerVersion = '2.51.1'
+
+    // OkHttp and Retrofit
+    okHttpVersion = '4.12.0'
+    retrofitVersion = '2.9.0'
+    gsonVersion = '2.10.1'
+    gsonConverterVersion = '2.9.0'
+    coroutinesAdapterVersion = '0.9.2'
+
+    // Paging 3
+    pagingVersion = '3.3.0'
+
+    // Firebase
+    firebaseBomVersion = '33.0.0'
+
+    // Amplitude
+    amplitudeSdkVersion = '2.23.2'
+
+    // Multidex
+    multidexVersion = '2.0.1'
+}
+
+dependencies {
+    // AndroidX and Core Libraries
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+
+    // ViewModel and Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    // Room Database
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.work:work-runtime-ktx:$workRuntimeVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // OkHttp and Retrofit
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$gsonConverterVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutinesAdapterVersion"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.firebase:firebase-crashlytics-ktx"
+
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+    // Amplitude
+    implementation "com.amplitude:android-sdk:$amplitudeSdkVersion"
+
+    // Multidex
+    implementation "androidx.multidex:multidex:$multidexVersion"
+
+    implementation project(':quash-sdk-core')
+    implementation project(':quash-sdk-features')
+
+}
+
+ext {
+    // Provide your own coordinates here
+    PUBLISH_GROUP_ID = 'com.quashbugs'
+    PUBLISH_VERSION = '1.1.5'
+    PUBLISH_ARTIFACT_ID = 'sherlock'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"

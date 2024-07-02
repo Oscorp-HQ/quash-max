@@ -1,0 +1,8 @@
+# Firebase Configuration
+FirebaseApiKey=YOUR_FIREBASE_API_KEY
+FirebaseAppId=YOUR_FIREBASE_APP_ID
+FirebaseProjectId=YOUR_FIREBASE_PROJECT_ID
+
+# Base URLs for different build types
+ReleaseBaseUrl=https://your_release_base_url.com
+DebugBaseUrl=https://your_debug_base_url.com

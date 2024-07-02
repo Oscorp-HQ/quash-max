@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+def quashProperties = new Properties()
+file("quash.properties").withInputStream { stream ->
+    quashProperties.load(stream)
+}
+
+android {
+    namespace 'com.quash.bugs.core'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
+        buildConfigField "String", "AMPLITUDE_API_KEY", "\"" + quashProperties['AmplitudeKey'] + "\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"" + quashProperties['ReleaseBaseUrl'] + "\""
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"" + quashProperties['DebugBaseUrl'] + "\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+// Define dependency versions
+ext {
+    // Room Database
+    roomVersion = '2.6.1'
+    workRuntimeVersion = '2.9.0'
+
+    // Dagger
+    daggerVersion = '2.51.1'
+
+    // OkHttp and Retrofit
+    okHttpVersion = '4.12.0'
+    retrofitVersion = '2.9.0'
+    gsonVersion = '2.10.1'
+    gsonConverterVersion = '2.9.0'
+    coroutinesAdapterVersion = '0.9.2'
+
+    // Coil for image loading
+    coilVersion = '2.3.0'
+    coilGifVersion = '2.2.1'
+    coilSvgVersion = '1.4.0'
+
+    // Paging 3
+    pagingVersion = '3.3.0'
+
+    // Amplitude
+    amplitudeSdkVersion = '2.23.2'
+
+    // Multidex
+    multidexVersion = '2.0.1'
+}
+
+dependencies {
+    // Room Database
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.work:work-runtime-ktx:$workRuntimeVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // OkHttp and Retrofit
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$gsonConverterVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutinesAdapterVersion"
+
+    // Coil for image loading
+    implementation "io.coil-kt:coil:$coilVersion"
+    implementation "io.coil-kt:coil-gif:$coilGifVersion"
+    implementation "io.coil-kt:coil-svg:$coilSvgVersion"
+
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+    // Amplitude
+    implementation "com.amplitude:android-sdk:$amplitudeSdkVersion"
+}

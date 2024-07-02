@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.buglist.fragments.QuashDetailDialogFragment">
+
+    <TextView
+        android:id="@+id/tvBugId"
+        style="@style/QuashText16sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_back_arrow"
+        android:drawablePadding="@dimen/_4dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/a12_234"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBugId" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditBug"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvReportedBy"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:text="@string/reported_by"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReporter"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginVertical="@dimen/_12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReportedBy">
+
+                <TextView
+                    android:id="@+id/ivIntials"
+                    style="@style/QuashText12sp"
+                    android:layout_width="@dimen/_26dp"
+                    android:layout_height="@dimen/_26dp"
+                    android:background="@drawable/quash_bg_circle"
+                    android:gravity="center"
+                    android:text="@string/kv"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/QuashText16sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:text="@string/kriti_verma"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivIntials"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/title"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clReporter" />
+
+            <TextView
+                android:id="@+id/etTitle"
+                style="@style/QuashText16sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginVertical="@dimen/_12dp"
+                android:background="@color/white"
+                android:hint="@string/untitled"
+                android:textColor="@color/black"
+                android:textColorHint="#9E9E9E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <View
+                android:id="@+id/viewTitle"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/description"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTitle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAudio"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginVertical="@dimen/_12dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+                tools:itemCount="1"
+                tools:listitem="@layout/quash_item_audio" />
+
+            <TextView
+                android:id="@+id/etDesc"
+                style="@style/QuashText16sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginVertical="@dimen/_12dp"
+                android:background="@color/white"
+                android:hint="@string/describe_the_bug_here"
+                android:textColor="@color/black"
+                android:textColorHint="#9E9E9E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvAudio" />
+
+            <View
+                android:id="@+id/viewDesc"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etDesc" />
+
+            <TextView
+                android:id="@+id/tvBug"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/bug_type"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDesc" />
+
+            <TextView
+                android:id="@+id/tvBugType"
+                style="@style/QuashText14sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:drawableStart="@drawable/quash_ic_bug"
+                android:drawablePadding="@dimen/_8dp"
+                android:text="@string/bug"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBug" />
+
+            <View
+                android:id="@+id/viewBug"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBugType" />
+
+            <TextView
+                android:id="@+id/tvPriorityDetail"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/priority"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewBug" />
+
+            <TextView
+                android:id="@+id/tvPriorityDetailType"
+                style="@style/QuashText14sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:drawableStart="@drawable/quash_ic_not_define"
+                android:drawablePadding="@dimen/_8dp"
+                android:text="@string/notdefined"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPriorityDetail" />
+
+            <View
+                android:id="@+id/viewPriorityDetail"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPriorityDetailType" />
+
+            <TextView
+                android:id="@+id/tvAttachment"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/attachments_cap"
+                android:textColor="@color/grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewPriorityDetail" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMedia"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAttachment"
+                tools:itemCount="3"
+                tools:listitem="@layout/quash_item_video" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEditBug"
+        style="@style/QuashText18sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:background="@drawable/quash_bg_cta_black_8dp"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_12dp"
+        android:text="@string/edit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

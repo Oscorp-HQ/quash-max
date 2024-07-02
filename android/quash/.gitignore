@@ -1,0 +1,43 @@
+/build
+
+/build
+/.idea/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+# Ignore local configuration file containing sensitive data
+
+quash.properties
+# Ignore actual Firebase configuration file
+google-services.json
+
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+
+# Android Profiling
+*.hprof

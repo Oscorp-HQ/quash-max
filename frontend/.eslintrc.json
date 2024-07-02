@@ -1,0 +1,9 @@
+{
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "warn",
+    "no-use-before-define": "error",
+    "no-unused-vars": "error"
+  }
+}

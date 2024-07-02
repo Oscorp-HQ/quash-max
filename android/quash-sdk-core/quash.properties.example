@@ -1,0 +1,4 @@
+# Base URLs for different build types
+ReleaseBaseUrl=https://your_release_base_url.com
+DebugBaseUrl=https://your_debug_base_url.com
+AmplitudeKey=you-api-key

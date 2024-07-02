@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.common.QuashPriorityBottomSheet">
+
+    <TextView
+        android:id="@+id/tvPrior"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:text="@string/priority_small"
+        android:textColor="@color/media_black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        android:src="@drawable/quash_ic_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHigh"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:drawableStart="@drawable/quash_ic_high"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/high"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrior" />
+
+    <View
+        android:id="@+id/viewHigh"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHigh" />
+
+    <TextView
+        android:id="@+id/tvMedium"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_medium"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/medium"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHigh" />
+
+    <View
+        android:id="@+id/viewMedium"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMedium" />
+
+    <TextView
+        android:id="@+id/tvLow"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_low"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/low"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewMedium" />
+
+    <View
+        android:id="@+id/viewLow"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLow" />
+
+    <TextView
+        android:id="@+id/tvNotDefined"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_not_define"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/notdefined"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLow" />
+
+    <View
+        android:id="@+id/viewNotDefined"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNotDefined" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.common.QuashTypeBottomSheet">
+
+    <TextView
+        android:id="@+id/tvType"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:text="@string/bug_type"
+        android:textColor="@color/media_black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        android:src="@drawable/quash_ic_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBug"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:drawableStart="@drawable/quash_ic_bug"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/bug"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvType" />
+
+    <View
+        android:id="@+id/viewHigh"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBug" />
+
+    <TextView
+        android:id="@+id/tvUi"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_ui"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/ui_improvement"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHigh" />
+
+    <View
+        android:id="@+id/viewMedium"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUi" />
+
+    <TextView
+        android:id="@+id/tvCrash"
+        style="@style/QuashText14sp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quash_ic_crash"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/crash"
+        android:textColor="@color/media_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewMedium" />
+
+    <View
+        android:id="@+id/viewLow"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCrash" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

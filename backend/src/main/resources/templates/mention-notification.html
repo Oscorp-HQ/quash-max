@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trouble Setting Up Quash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <style>
+        body {
+          font-family: "Inter", sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+        }
+        .comment-box {
+          border-radius: 12px;
+          border: 2px solid #ededed;
+          background: #fff;
+          padding: 12px 16px;
+        }
+        .comment-box span {
+          display: block; /* Makes each span a block element, so they stack vertically */
+        }
+        .poster-name {
+          display: flex;
+          flex-direction: row;
+          color: #000;
+          font-weight: 700;
+          line-height: 16px;
+        }
+        .posted-at {
+          color: #747474;
+        }
+        .message-content {
+          font-family: Inter;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+          margin-top: 12px; /* Spacing above the message */
+        }
+        .image-content {
+          margin-top: 12px; /* Spacing above the image */
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table width="100%" bgcolor="#F4F4F4" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table bgcolor="#FFFFFF" style="
+                margin: 50px auto;
+                border-radius: 5px;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);" width="640" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td  style="
+                        background-color: black;
+                    padding: 40px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;">
+                            <a href="https://storage.googleapis.com/quashbugs.com/"><img src="https://storage.googleapis.com/quashbugs.com/Logo%20(1).png" alt="Quash Logo" width="120" style="display: block; border: 0"/></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 32px 40px 0 40px">
+                            <p style="margin-top: 0px; color: #212121; font-size: 16px; font-weight: 400;">
+                                You were mentioned in a comment on Quash.
+                            </p>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0 40px 8px 40px;color: var(--Grey-800, #424242);
+                        font-family: Inter;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 130%; ">
+                            <p style="margin-top: 0px; margin-bottom: 0px; margin-top: 40px;"><a href="${link}" style="text-decoration: none;color: var(--Grey-Grey-600, #424242);">${reportId}</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0 40px 32px 40px">
+                            <p style="margin-top: 0px; margin-bottom: 0px; font-size: 20px; font-weight: 600;">
+                                <a href="${link}" style="text-decoration: none; color: #000; color: #000;">${reportTitle}</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0 40px 40px 40px">
+                            <div class="comment-box" >
+                                <span style="display: flex; flex-direction: row;"><span style="color: #000;
+
+                                  /* 12px / 700 */
+                                  font-family: Inter;
+                                  font-size: 12px;
+                                  font-style: normal;
+                                  font-weight: 700;
+                                  line-height: 16px; /* 133.333% */"><a href="${link}" style="text-decoration: none; color: #000;">${posterName}</a></span> <span style="color: var(--Grey-Grey-600, #747474);
+
+                                  /* 12px / 400 */
+                                  font-family: Inter;
+                                  font-size: 12px;
+                                  font-style: normal;
+                                  font-weight: 400;
+                                  line-height: 16px; /* 133.333% */"><a href="${link}" style="text-decoration: none; color: var(--Grey-Grey-600, #747474); padding-left: 8px;">${postedAt}</a></span> </span>
+                                <span class="message-content"><a href="${link}" style="text-decoration: none; color: #000;">${message}</a></span>
+                                <span class="image-content"><a href="${link}" style="text-decoration: none; color: #000; margin-top: 12px;">${media}</a></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding-top: 40px; padding-bottom: 40px; font-size: 12px;">
+                            <hr style="width: 560px; background: #bdbdbd; margin-bottom: 24px;"/>
+                            <a href="https://quashbugs.com/" target="_blank" style="color: #606060; text-decoration: none;">
+                                www.quashbugs.com
+                            </a>
+                        </td>
+                    </tr>
+                    </a>
+                </table>
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>

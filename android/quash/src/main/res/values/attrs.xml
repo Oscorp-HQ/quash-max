@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimaryCustom" format="reference" />
+    <attr name="colorSecondaryCustom" format="reference" />
+    <!-- we will use it later in the dev -->
+</resources>

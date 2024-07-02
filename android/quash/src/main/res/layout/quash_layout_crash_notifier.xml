@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvPoweredByQuash"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_4dp"
+                android:paddingHorizontal="@dimen/_8dp"
+                android:text="@string/powered_by_quash"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:src="@drawable/quash_ic_quash_icon"
+                app:layout_constraintEnd_toEndOf="@+id/tvCrashDetected"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPoweredByQuash" />
+
+
+            <TextView
+                android:id="@+id/tvCrashDetected"
+                style="@style/QuashText18sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Crash Detected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+            <TextView
+                android:id="@+id/tvCrashDetails"
+                style="@style/QuashText12sp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@string/quash_has_detected_a_crash_ndo_you_want_to_report_this"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCrashDetected" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_32dp"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:background="@color/red_900"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCrashDetails" />
+
+            <Button
+                android:id="@+id/btnReport"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:background="@color/black"
+                android:text="Report"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

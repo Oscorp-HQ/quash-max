@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Notification Permission for Android 13 and above -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+    <permission
+        android:name="com.quash.bugs.permission.SEND_SHAKE_DETECTED"
+        android:label="Permission to send SHAKE_DETECTED broadcasts"
+        android:protectionLevel="signature" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+
+
+        <activity
+            android:name=".presentation.buglist.activities.QuashEditBugActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/QuashAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".presentation.bugreport.activity.QuashBugReportActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoFlashTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".presentation.buglist.activities.QuashBugListActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.quash.bugs"
+            android:theme="@style/QuashAppTheme" />
+
+        <service
+            android:name=".service.QuashWatchdogService"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.permission.PermissionRequestActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/QuashTheme.Transparent" />
+
+        <activity
+            android:name=".presentation.permission.QuashCrashNotifierActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/QuashThemeTransparentActivityTheme" />
+
+        <service
+            android:name=".service.QuashRecorderService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+
+
+    </application>
+
+</manifest>

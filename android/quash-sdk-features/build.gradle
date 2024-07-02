@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+def quashProperties = new Properties()
+file("quash.properties").withInputStream { stream ->
+    quashProperties.load(stream)
+}
+
+android {
+    namespace 'com.quash.bugs.features'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"" + quashProperties['ReleaseBaseUrl'] + "\""
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"" + quashProperties['DebugBaseUrl'] + "\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+// Define dependency versions
+ext {
+    // AndroidX and Core Libraries
+    coreKtxVersion = '1.13.1'
+
+    // Dagger
+    daggerVersion = '2.51.1'
+
+    // OkHttp and Retrofit
+    okHttpVersion = '4.12.0'
+    retrofitVersion = '2.9.0'
+    gsonVersion = '2.10.1'
+    gsonConverterVersion = '2.9.0'
+    coroutinesAdapterVersion = '0.9.2'
+
+    // Firebase
+    firebaseBomVersion = '33.0.0'
+}
+
+dependencies {
+    implementation project(':quash-sdk-core')
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // OkHttp and Retrofit
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+}
+

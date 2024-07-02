@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.bugreport.bottomsheet.QuashAttachmentBottomSheet">
+
+    <TextView
+        android:id="@+id/tvAttach"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:text="@string/add_media"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:src="@drawable/quash_ic_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScreenShot"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:drawableStart="@drawable/quash_ic_camera"
+        android:drawablePadding="@dimen/_8dp"
+        android:padding="@dimen/_16dp"
+        android:text="@string/take_a_screenshot"
+        android:textColor="@color/media_black"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttach" />
+
+    <View
+        android:id="@+id/viewScreenShot"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScreenShot" />
+
+    <TextView
+        android:id="@+id/tvVideo"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        android:drawableStart="@drawable/quash_ic_play"
+        android:drawablePadding="@dimen/_8dp"
+        android:text="@string/start_screen_recording"
+        android:textColor="@color/media_black"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewScreenShot" />
+
+    <View
+        android:id="@+id/viewVideo"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/grey_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvVideo" />
+
+    <TextView
+        android:id="@+id/tvGallery"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:drawableStart="@drawable/quash_ic_gallery"
+        android:drawablePadding="@dimen/_8dp"
+        android:text="@string/upload_from_gallery"
+        android:textColor="@color/media_black"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewVideo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

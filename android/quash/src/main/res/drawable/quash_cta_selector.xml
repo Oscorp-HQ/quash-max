@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/quash_bg_cta_black_8dp" android:state_enabled="true" />
+    <item android:drawable="@drawable/quash_bg_cta_grey_8dp" android:state_enabled="false" />
+
+</selector>

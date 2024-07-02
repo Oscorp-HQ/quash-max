@@ -1,0 +1,12 @@
+substitutions:
+  _ENV: 'staging'  # default environment
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - 'build'
+    - '--build-arg'
+    - '-t'
+    - 'gcr.io/$PROJECT_ID/quash-dashboard:${_ENV}-$SHORT_SHA'
+    - '.'
+images:
+  - 'gcr.io/$PROJECT_ID/quash-dashboard:${_ENV}-$SHORT_SHA'

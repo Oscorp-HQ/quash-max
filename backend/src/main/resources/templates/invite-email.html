@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+
+<body style="margin: 10px; padding: 50px; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+
+<div style="max-width: 600px; margin: 50px auto; background-color: #fff; border-radius: 5px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
+
+    <!-- Logo Banner Header -->
+    <div style="background-color: #000; padding: 10px 0; text-align: center;">
+        <img src="https://storage.googleapis.com/quashbugs.com/Logo%20(1).png" alt="Quash Logo" style="padding: 10px; max-width: 20%;" />
+    </div>
+
+    <!-- Content -->
+    <div style="text-align: center; color: #333; padding: 12px;">
+        <h2>You have been invited to Quash</h2>
+
+        <p>${personName} has invited you to join ${teamName} team.</p>
+        <p>Please click on the button below to verify your email address</p>
+
+        <!-- Verification button -->
+        <div style="margin: 30px 0;">
+            <a href="${verificationUrl}" style="background-color: #000; padding: 10px 20px; color: #fff; text-decoration: none; border-radius: 4px;">Join Quash</a>
+        </div>
+
+        <p>This email is intended for <a href="${emailAddress}" target="_blank">${emailAddress}</a></p>
+        </p>If you did not create this account, please ignore this email</p>
+
+        <!-- Help box -->
+        <div style="background-color: #f1f1f1; padding: 15px; margin-top: 20px; border-radius: 4px;font-size: 12px;">
+            <span>If you’re having trouble clicking the ‘Join Quash’ button, copy and paste the following URL into your web browser:</span><br>
+            <a href="${verificationUrl}" target="_blank" style="color: rgba(66,66,66,1); display: block; margin-top: 10px;">${verificationUrl}</a>
+            <span style="display: block; margin-top: 10px;">For any further assistance, contact us at hello@quashbugs.com</span>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 30px; color: #999; font-size: 12px; padding: 10px;">
+        <p>&copy; 2023 Quash. All rights reserved.</p>
+    </div>
+
+</div>
+
+</body>
+
+</html>

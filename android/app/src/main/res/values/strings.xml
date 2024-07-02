@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bugger</string>
+    <string name="crash">Crash</string>
+    <string name="already_a_user_log_in">Already a user? <b><u>Log In</u></b></string>
+</resources>

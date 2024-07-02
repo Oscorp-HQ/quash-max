@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/quash_bg_rounded_corner_16"
+    android:backgroundTint="@color/orange_50"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textNotificationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:text="zcnzjczjkchzjkchzjkchzjkchzhczhjczkjhckjzhckjzhckjzhc"
+        android:textAlignment="center"
+        android:textColor="@color/media_black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/buttonNotification"
+        style="@style/QuashBlackRoundedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/orange_200"
+        android:text="Grant Notification Permission"
+        android:textAllCaps="false"
+        android:textColor="@color/media_black"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+    <Button
+        android:id="@+id/buttonNeverShow"
+        style="@style/QuashBlackRoundedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange_200"
+        android:text="Never show again"
+        android:textAllCaps="false"
+        android:textColor="@color/media_black"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+</LinearLayout>

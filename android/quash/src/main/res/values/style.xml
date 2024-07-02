@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="QuashAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="QuashTheme.Transparent" parent="QuashAppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="QuashThemeTransparentActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <!-- Bottom Sheet Dialog Style -->
+    <style name="QuashBottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/QuashBottomSheetBackground</item>
+    </style>
+
+    <!-- Bottom Sheet Background -->
+    <style name="QuashBottomSheetBackground" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/quash_rounded_top_corners</item>
+    </style>
+
+    <!-- Custom Alert Dialog -->
+
+    <style name="QuashMaterial3AlertDialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <!-- other customizations -->
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyDialog</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="QuashDialogTheme" parent="QuashAppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <!-- Rounded Square -->
+    <style name="QuashRoundedSquare">
+        <item name="cornerSize">12dp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+
+    <!-- Rounded Black Button with 18sp White Text -->
+    <style name="QuashBlackRoundedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="fontFamily">@font/inter_font_family</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="shapeAppearanceOverlay">@style/QuashRoundedButtonShapeAppearance</item>
+    </style>
+
+    <!-- Rounded White Button with 1sp Black Stroke and 18sp Black Text -->
+
+    <!-- Text Styles -->
+
+    <style name="QuashText18sp">
+        <item name="fontFamily">@font/inter_font_family</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="QuashText16sp">
+        <item name="fontFamily">@font/inter_font_family</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="QuashText12sp">
+        <item name="fontFamily">@font/inter_font_family</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_400</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Rounded Button Shape Appearance -->
+    <style name="QuashRoundedButtonShapeAppearance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="NoFlashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/quash_bg_crash_process</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="MaterialAlertDialog" parent="Theme.Material3.Light.Dialog.Alert">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.2</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+
+    <style name="MaterialAlertDialogSimple" parent="Theme.Material3.Light.Dialog.Alert">
+
+    </style>
+
+</resources>
