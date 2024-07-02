@@ -86,6 +86,15 @@ For frontend setup and deployment instructions, please refer to the [frontend RE
 1. **Dashboard Access:** Log in to the Quash web dashboard.
 2. **View Reports:** Access detailed bug reports with all captured data.
 
+## Contributing
+
+We love contributions! Please read our [contribution guidelines](./CONTRIBUTING.md) to get started. We welcome all kinds of contributions, from code enhancements to documentation improvements.
+
+## License
+
+Quash is licensed under the [MIT License](./LICENSE).
+
+
 ## Contact
 
 For any questions or support, please reach out to us at [support@quashbugs.com](mailto:support@quashbugs.com).
