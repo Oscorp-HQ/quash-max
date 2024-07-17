@@ -13,7 +13,6 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 - Session Replays: Watch exactly what happened during the bug.
 - Crash Logs & Network Logs: Detailed technical information for swift debugging.
 - Device Information: Detailed device information including OS version, device model, and more.
-- AI-Powered Solutions: Suggested fixes for each bug report.
 
 ## Tech Stack
 
