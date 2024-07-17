@@ -1,8 +1,10 @@
 # Official Backend for [Quash](https://quashbugs.com/)
 
-Welcome to the Quash Web Backend, your ultimate in-app bug reporting tool! Built by developers for developers, this web dashboard captures everything you need to start fixing issues right away. It dispalys crash logs, session replays, network logs, device information, and much more, ensuring you have all the details at your fingertips.
+Welcome to the Quash Backend repository, part of the [Quash](https://quashbugs.com/) project. This repository contains the code for the Quash Web Backend, a crucial component of your ultimate in-app bug reporting tool. Built by developers for developers, this backend supports the web dashboard in capturing everything you need to start fixing issues right away, including crash logs, session replays, network logs, device information, and much more.
 
-<div align="center"> <img src="https://github.com/dhairya-quash/TEST-REPO/assets/161799860/7f7b7ffd-66f4-45d7-b68e-01fcedff0a75" alt="Logo" width=1000> </div>
+<div align="center">
+    <img src="https://github.com/dhairya-quash/TEST-REPO/assets/161799860/7f7b7ffd-66f4-45d7-b68e-01fcedff0a75" alt="Logo" width=1000>
+</div>
 <br>
 
 | **Reporting** 🗒️ | **Resolution** ✅ | **Collaboration** 🤝🏻 |
@@ -15,8 +17,6 @@ Welcome to the Quash Web Backend, your ultimate in-app bug reporting tool! Built
 - [Project Architecture](#project-architecture)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [API Flows](#api-flows)
-- [Data Models and DTOs](#data-models-and-dtos)
 - [Optional Integrations](#optional-integrations)
 - [Run Locally](#run-locally)
 
@@ -41,9 +41,9 @@ The project is structured into the following layers:
 <div align="center"> <img src="https://github.com/Oscorp-HQ/quash-backend/assets/161799860/65d6b494-4867-43ed-970a-676feb6a7272" alt="Flow" width=1000> </div>
 <br>
 
-This guide will provide you steps to setup and configure the Backend for Sherlock.
+This guide will provide you steps to setup and configure the Backend for Quash.
 
-Sherlock is built using the following technologies:
+Quash Backend is built using the following technologies:
 - [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.installing)
 - [MongoDB](https://www.mongodb.com/docs/manual/installation/)
 - Maven
@@ -54,15 +54,18 @@ Sherlock is built using the following technologies:
 # Move to your workspace
 cd your-workspace
 
-# Clone this project in your workspace
-git clone https://github.com/Oscorp-HQ/QuashBackend.git
+# Clone the parent repository
+git clone https://github.com/Oscorp-HQ/quash-max.git
 
-# Move to the project root directory
-cd QuashBackend
+# Move to the backend directory
+cd quash-max/backend
 
-#Run this maven command
+# Run this maven command
 mvn clean install
 ```
+
+## Configuration
+
 
 ## Application.properties
 > Navigate to the resources directory and open the `application.properties` file. Here you will add your database connection strings, access tokens, secret keys for different integrations and services.<br>
@@ -184,3 +187,17 @@ Run the `QuashApplication` File
 ```java
 mvn spring-boot:run
 ```
+
+## Repository Structure
+
+This backend repository is part of the larger Quash project, located in the parent repository at https://github.com/Oscorp-HQ/quash-max. The parent repository contains multiple components of the Quash project, including this backend.
+
+For information on other components and how they interact, please refer to the main README in the parent repository.
+
+## Contributing
+
+For contribution guidelines, please refer to the CONTRIBUTING.md file in the parent repository.
+
+## License
+
+This project is licensed under the terms specified in the LICENSE file in the parent repository.
