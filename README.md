@@ -67,13 +67,17 @@ Quash comprises three main components: the SDK, the backend, and the frontend.
 
 ## Installation
 
-### SDK Installation
-For detailed SDK installation instructions, please refer to the individual [README files in the SDK directory](./android/README.md).
+## Quick Start Guide
 
-### Backend Installation
+For a detailed, step-by-step guide on setting up Quash's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/Quickstart.md).
+
+### SDK 
+For detailed SDK instructions, please refer to the individual [README files in the SDK directory](./android/README.md).
+
+### Backend 
 For backend setup and deployment instructions, please refer to the [backend README file](./backend/README.md).
 
-### Frontend Installation
+### Frontend 
 For frontend setup and deployment instructions, please refer to the [frontend README file](./frontend/README.md).
 
 
@@ -88,10 +92,6 @@ For frontend setup and deployment instructions, please refer to the [frontend RE
 ### Managing Bugs
 1. **Dashboard Access:** Log in to the Quash web dashboard.
 2. **View Reports:** Access detailed bug reports with all captured data.
-
-## Quick Start Guide
-
-For a detailed, step-by-step guide on setting up Quash's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/Quickstart.md).
 
 ## Contributing
 
