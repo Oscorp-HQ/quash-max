@@ -2,7 +2,8 @@
 <Meta title="Quash README" />
 
 # Quash: Your Ultimate In-App Bug Reporting Solution
-
+<div align="center"> <img src="https://github.com/user-attachments/assets/e3cdb94c-4596-4955-9f3b-14cc004b1733" alt="Quash Banner" width=1000> </div>
+<br>
 Welcome to Quash! We're excited to introduce our next-generation mobile development tool designed to revolutionize the way you test and debug your applications. With Quash, identifying and resolving bugs is as easy as a shake of your device. Our intuitive platform auto-captures session replays, crash logs, and more, allowing you to focus on building new features while we handle the bugs.
 
 ## Table of Contents
@@ -75,6 +76,8 @@ For backend setup and deployment instructions, please refer to the [backend READ
 ### Frontend Installation
 For frontend setup and deployment instructions, please refer to the [frontend README file](./frontend/README.md).
 
+For a detailed, step-by-step guide on setting up Quash's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/Quickstart.md).
+
 ## Usage
 
 ### Reporting Bugs
@@ -85,6 +88,10 @@ For frontend setup and deployment instructions, please refer to the [frontend RE
 ### Managing Bugs
 1. **Dashboard Access:** Log in to the Quash web dashboard.
 2. **View Reports:** Access detailed bug reports with all captured data.
+
+## Quick Start Guide
+
+For a detailed, step-by-step guide on setting up Quash using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](./Test.md).
 
 ## Contributing
 
