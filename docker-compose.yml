@@ -1,0 +1,22 @@
+services:
+  frontend:
+    image: quashbugs/quash-max-frontend:latest
+    container_name: max-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - quash-network
+
+  backend:
+    image: quashbugs/quash-max-backend:latest
+    container_name: max-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_CONFIG_LOCATION=classpath:/application.properties,optional:file:/app/backend/application.properties
+    networks:
+      - quash-network
+
+networks:
+  quash-network:
+    driver: bridge
