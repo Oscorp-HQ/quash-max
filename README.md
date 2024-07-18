@@ -65,9 +65,7 @@ Quash comprises three main components: the SDK, the backend, and the frontend.
 - **Next.js Dashboard:** A user-friendly web interface for viewing and managing bug reports.
 - **Real-Time Data:** Displays real-time data captured by the SDK, with options for collaboration and issue tracking.
 
-## Installation
-
-## Quick Start Guide
+## Quick Start Guide & Installation
 
 For a detailed, step-by-step guide on setting up Quash's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/Quickstart.md).
 
