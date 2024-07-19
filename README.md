@@ -10,7 +10,7 @@ Welcome to Quash! We're excited to introduce our next-generation mobile developm
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Architecture](#architecture)
-4. [Installation](#installation)
+4. [Installation](#quick-start-guide-&-installation)
 5. [Usage](#usage)
 6. [Contributing](#contributing)
 7. [License](#license)
