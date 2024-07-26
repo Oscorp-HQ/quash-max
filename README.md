@@ -97,7 +97,7 @@ We love contributions! Please read our [contribution guidelines](./CONTRIBUTING.
 
 ## License
 
-Quash is licensed under the [MIT License](./LICENSE).
+Quash is licensed under the [MIT License](./LICENSE.md).
 
 
 ## Contact
