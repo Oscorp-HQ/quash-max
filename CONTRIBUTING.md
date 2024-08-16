@@ -11,7 +11,7 @@ Thinking about contributing to Quash? Awesome! 🌟 Your enthusiasm and willingn
 - Before jumping into a PR be sure to search [existing PRs](https://github.com/Oscorp-HQ/quash-max/pulls) or [issues](https://github.com/Oscorp-HQ/quash-max/issues) for an open or closed item that relates to your submission.
 - Select an issue from [here](https://github.com/Oscorp-HQ/quash-max/issues) or create a new one
 - Consider the results from the discussion on the issue
-- Ensure that you follow the [Code of Conduct](https://github.com/dhairya-quash/TEST-REPO/blob/main/Code%20Of%20Conduct.md) to ensure we can accept your contributions.
+- Ensure that you follow the [Code of Conduct](https://github.com/Oscorp-HQ/quash-max/blob/main/CODE_OF_CONDUCT.md) to ensure we can accept your contributions.
 
 ### Taking Issues
 
