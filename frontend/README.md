@@ -16,6 +16,8 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 
 ## Tech Stack
 
+[![Typescript](https://img.shields.io/badge/Typescript-white?logo=TypeScript)](https://www.typescriptlang.org/) [![Next.js](https://img.shields.io/badge/Next.js-000000?logo=Next.js)](https://nextjs.org/) [![Tailwind](https://img.shields.io/badge/Tailwind-white?logo=tailwindcss)](https://tailwindcss.com/) [![shadcn/ui](https://img.shields.io/badge/shadcn_ui-000000?logo=shadcnui)](https://ui.shadcn.com/) [![Google Cloud Platform](https://img.shields.io/badge/Google_Cloud_Platform-white?logo=googlecloud)](https://cloud.google.com/)
+
 - [Typescript](https://www.typescriptlang.org/) - Language
 - [Next.js](https://nextjs.org/) - Framework
 - [Tailwind](https://tailwindcss.com/) - CSS
@@ -25,6 +27,10 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 
 ## Getting Started
 
+### Note
+
+> Quash Dashboard has a dependency on backend for providing the neccesary actions and data to go beyond the signin and signup page. So in order to use the dashboard or view any changes that you make in the dashboard, you need a working backend for it. To do so, you can either run the code manually or use a pre-built docker image. Please refer to the [Backend Setup](https://github.com/dhairya-quash/TEST-REPO/tree/main/backend) for detailed steps.
+
 ### Prerequisites
 
 - Node.js (version 18 or later)
@@ -32,6 +38,7 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 ### Installation
 
 1. **Clone the parent repository and move to the frontend directory:**
+
    ```sh
    git clone https://github.com/Oscorp-HQ/quash-max.git
    cd quash-max/frontend
@@ -39,10 +46,13 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 
 2. **Install dependencies:**
    Using npm:
+
    ```sh
    npm install
    ```
+
    Or using yarn:
+
    ```sh
    yarn install
    ```
@@ -54,14 +64,50 @@ Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.
 
 1. **Run the development server:**
    Using npm:
+
    ```sh
    npm run dev
    ```
+
    Or using yarn:
+
    ```sh
    yarn dev
    ```
-   Open http://localhost:3000 with your browser to see the result.
+
+### Running With Docker:
+
+1. Pull Max's frontend docker image from docker hub.
+
+   ```bash
+   docker pull quashbugs/quash-max-frontend:latest
+   ```
+
+2. Create a container without running.
+
+   ```bash
+   docker create --name max-frontend -p 3000:3000 quashbugs/quash-max-frontend:latest
+   ```
+
+3. Extract the `application.properties` file to configure environment variables.
+
+   ```bash
+   docker cp max-frontend:/app/frontend/.env.example ./.env.local
+   ```
+
+4. Edit the `.env.local` file on your local machine by adding your tokens and secrets and after that, mount it back to the container.
+
+   ```bash
+   docker cp ./.env.local max-frontend:/app/frontend/.env.local
+   ```
+
+5. Run the container.
+
+   ```bash
+   docker start max-frontend
+   ```
+
+Open http://localhost:3000 with your browser to see the result.
 
 ## Repository Structure
 
