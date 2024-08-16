@@ -17,10 +17,10 @@
     <a href="https://discord.com/invite/Nxbe8F6aqw"><img src="https://img.shields.io/badge/Discord-Appstronauts-5865F2?style=&logo=Discord" alt="Discord"></a>
     <a href="https://x.com/helloquash"><img src="https://img.shields.io/badge/Twitter-Quash-yellow?logo=X" alt="Twitter"></a>
     <a href="https://github.com/Oscorp-HQ/quash-max/stargazers"><img src="https://img.shields.io/github/stars/Oscorp-HQ/quash-max" alt="GitHub Stars"></a>
-    <a href="https://github.com/dhairya-quash/TEST-REPO/blob/main/Code%20Of%20Conduct.md"><img src="https://img.shields.io/badge/Code_of_Conduct-1.0-green" alt="Code of Conduct"></a>
+    <a href="https://github.com/Oscorp-HQ/quash-max/blob/main/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code_of_Conduct-1.0-green" alt="Code of Conduct"></a>
     <a href="https://github.com/Oscorp-HQ/quash-max/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-orange" alt="license"></a> 
-    <a href="https://hub.docker.com/repository/docker/dhairya07/quash-max-backend/general"><img src="https://img.shields.io/badge/Docker%20Image-Backend-blue?logo=docker" alt="Backend Docker Image"></a>
-    <a href="https://hub.docker.com/repository/docker/dhairya07/quash-max-frontend/general"><img src="https://img.shields.io/badge/Docker%20Image-Frontend-green?logo=docker" alt="Frontend Docker Image"></a> 
+    <a href="https://hub.docker.com/repository/docker/quashbugs/quash-max-frontend:latest"><img src="https://img.shields.io/badge/Docker%20Image-Backend-blue?logo=docker" alt="Backend Docker Image"></a>
+    <a href="https://hub.docker.com/repository/docker/quashbugs/quash-max-backend:latest"><img src="https://img.shields.io/badge/Docker%20Image-Frontend-green?logo=docker" alt="Frontend Docker Image"></a> 
 </div>
 
 
