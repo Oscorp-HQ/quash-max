@@ -188,7 +188,7 @@ For frontend setup and deployment instructions, please refer to the [frontend RE
 ## Deployment
 > Note: For deploying SDK, refer to the deplyment section of android - [SDK Installation Guide](https://github.com/dhairya-quash/TEST-REPO/tree/main/android)
 
-For a detailed, step-by-step guide on setting up Quash Max's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/dhairya-quash/TEST-REPO/blob/main/Deployment%20Guide.md).
+For a detailed, step-by-step guide on setting up Quash Max's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/DEPLOYMENT.md).
 
 ## License
 
