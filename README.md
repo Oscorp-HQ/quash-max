@@ -1,109 +1,124 @@
+# Official Web Dashboard for [Quash](https://quashbugs.com/)
 
-<Meta title="Quash README" />
+Welcome to the Quash Frontend repository, part of the [Quash](https://quashbugs.com/) project. This repository contains the code for the Quash Web Dashboard, your ultimate in-app bug reporting tool. Built by developers for developers, this web dashboard captures everything you need to start fixing issues right away. It displays crash logs, session replays, network logs, device information, and much more, ensuring you have all the details at your fingertips.
 
-# Quash: Your Ultimate In-App Bug Reporting Solution
-<div align="center"> <img src="https://github.com/user-attachments/assets/e3cdb94c-4596-4955-9f3b-14cc004b1733" alt="Quash Banner" width=1000> </div>
-<br>
-Welcome to Quash! We're excited to introduce our next-generation mobile development tool designed to revolutionize the way you test and debug your applications. With Quash, identifying and resolving bugs is as easy as a shake of your device. Our intuitive platform auto-captures session replays, crash logs, and more, allowing you to focus on building new features while we handle the bugs.
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Architecture](#architecture)
-4. [Installation](#quick-start-guide--installation)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
-
-## Introduction
-
-Quash is an SDK-enabled bug reporting solution that helps users report bugs efficiently with just a simple shake. Our tool tracks and resolves bugs through the Quash web dashboard, ensuring your mobile apps are released on time with the highest quality standards. With Quash, teams can optimize the time and resources spent on the testing process, making mobile testing smooth and straightforward.
+<p align="center">
+    <a href="https://quashbugs.com">
+        <img src="https://storage.googleapis.com/misc_quash_static/quash-frontend.png"/>
+    </a>
+</p>
 
 ## Features
 
-### Easy Setup
-- **Quick Integration:** Integrate the Quash SDK with your application in less than 5 minutes.
-- **Detailed Guides:** Follow our comprehensive guides for seamless setup.
+- Session Replays: Watch exactly what happened during the bug.
+- Crash Logs & Network Logs: Detailed technical information for swift debugging.
+- Device Information: Detailed device information including OS version, device model, and more.
 
-### In-App Bug Reporting
-- **Shake to Report:** Simply shake your device to launch the reporting window, prefilled with essential information.
-- **Intuitive Interface:** Log bugs in seconds with our user-friendly interface.
+## Tech Stack
 
-### Automated Crash Detection
-- **Real-Time Capture:** Automatically detect and capture crash events along with all necessary information.
-- **Reproduce-Free Debugging:** No need to reproduce crashes manually.
+[![Typescript](https://img.shields.io/badge/Typescript-white?logo=TypeScript)](https://www.typescriptlang.org/) [![Next.js](https://img.shields.io/badge/Next.js-000000?logo=Next.js)](https://nextjs.org/) [![Tailwind](https://img.shields.io/badge/Tailwind-white?logo=tailwindcss)](https://tailwindcss.com/) [![shadcn/ui](https://img.shields.io/badge/shadcn_ui-000000?logo=shadcnui)](https://ui.shadcn.com/) [![Google Cloud Platform](https://img.shields.io/badge/Google_Cloud_Platform-white?logo=googlecloud)](https://cloud.google.com/)
 
-### Information Auto-Capture
-- **Comprehensive Data Collection:** Auto-capture screenshots, session recordings, crash logs, steps to reproduce, device information, and API/network calls.
-- **Detailed Bug Reports:** Each bug report includes all relevant data at the moment of the crash or when shaking the device.
+- [Typescript](https://www.typescriptlang.org/) - Language
+- [Next.js](https://nextjs.org/) - Framework
+- [Tailwind](https://tailwindcss.com/) - CSS
+- [shadcn/ui](https://ui.shadcn.com/) - Component Library
+- [NextAuth.js](https://next-auth.js.org/) - Authentication
+- [Google Cloud Platform](https://cloud.google.com/) - Hosting
 
-### External Media Attachments
-- **Enhanced Reports:** Add audio recordings, pictures, videos, and other media files to bug reports.
+## Getting Started
 
-### Bug Tracking and Collaboration
-- **Web Dashboard:** Manage all reported bugs and crashes through the Quash web dashboard.
-- **Collaboration Tools:** View, track, prioritize, and comment on bugs for efficient resolution.
+### Note
 
-### Seamless Integrations
-- **Popular Tools:** Integrate with Jira, Slack, Google Sheets, Linear, GitHub, and more.
-- **Streamlined Workflow:** Export tickets directly to these platforms for a seamless bug tracking and resolution process.
+> Quash Dashboard has a dependency on backend for providing the neccesary actions and data to go beyond the signin and signup page. So in order to use the dashboard or view any changes that you make in the dashboard, you need a working backend for it. To do so, you can either run the code manually or use a pre-built docker image. Please refer to the [Backend Setup](https://github.com/dhairya-quash/TEST-REPO/tree/main/backend) for detailed steps.
 
-## Architecture
+### Prerequisites
 
-Quash comprises three main components: the SDK, the backend, and the frontend.
+- Node.js (version 18 or later)
 
-### SDK
-- **Android SDK:** The Quash SDK for Android provides in-app bug reporting and crash detection.
-- **Integration:** Simple integration with your application, including network interception and configuration.
+### Installation
 
-### Backend
-- **Spring Boot Application:** Handles API requests, processes bug reports, and manages integrations with third-party tools.
-- **Scalable Infrastructure:** Built to handle high volumes of data and concurrent users.
+1. **Clone the parent repository and move to the frontend directory:**
 
-### Frontend
-- **Next.js Dashboard:** A user-friendly web interface for viewing and managing bug reports.
-- **Real-Time Data:** Displays real-time data captured by the SDK, with options for collaboration and issue tracking.
+   ```sh
+   git clone https://github.com/Oscorp-HQ/quash-max.git
+   cd quash-max/frontend
+   ```
 
-## Quick Start Guide & Installation
+2. **Install dependencies:**
+   Using npm:
 
-For a detailed, step-by-step guide on setting up Quash's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/Quickstart.md).
+   ```sh
+   npm install
+   ```
 
-### SDK 
-For detailed SDK instructions, please refer to the individual [README files in the SDK directory](./android/README.md).
+   Or using yarn:
 
-### Backend 
-For backend setup and deployment instructions, please refer to the [backend README file](./backend/README.md).
+   ```sh
+   yarn install
+   ```
 
-### Frontend 
-For frontend setup and deployment instructions, please refer to the [frontend README file](./frontend/README.md).
+3. **Set up environment variables:**
+   Create a `.env.local` file in the `frontend` directory and add necessary environment variables as shown in `.env.example`.
 
+### Usage
 
+1. **Run the development server:**
+   Using npm:
 
-## Usage
+   ```sh
+   npm run dev
+   ```
 
-### Reporting Bugs
-1. **Shake Device:** Trigger the bug report by shaking your device.
-2. **Fill Report:** Use the prefilled bug report window to add any additional details.
-3. **Submit:** Submit the report, which is then captured and sent to the Quash web dashboard.
+   Or using yarn:
 
-### Managing Bugs
-1. **Dashboard Access:** Log in to the Quash web dashboard.
-2. **View Reports:** Access detailed bug reports with all captured data.
+   ```sh
+   yarn dev
+   ```
+
+### Running With Docker:
+
+1. Pull Max's frontend docker image from docker hub.
+
+   ```bash
+   docker pull quashbugs/quash-max-frontend:latest
+   ```
+
+2. Create a container without running.
+
+   ```bash
+   docker create --name max-frontend -p 3000:3000 quashbugs/quash-max-frontend:latest
+   ```
+
+3. Extract the `application.properties` file to configure environment variables.
+
+   ```bash
+   docker cp max-frontend:/app/frontend/.env.example ./.env.local
+   ```
+
+4. Edit the `.env.local` file on your local machine by adding your tokens and secrets and after that, mount it back to the container.
+
+   ```bash
+   docker cp ./.env.local max-frontend:/app/frontend/.env.local
+   ```
+
+5. Run the container.
+
+   ```bash
+   docker start max-frontend
+   ```
+
+Open http://localhost:3000 with your browser to see the result.
+
+## Repository Structure
+
+This frontend repository is part of the larger Quash project, located in the parent repository at https://github.com/Oscorp-HQ/quash-max. The parent repository contains multiple components of the Quash project, including this frontend.
+
+For information on other components and how they interact, please refer to the main README in the parent repository.
 
 ## Contributing
 
-We love contributions! Please read our [contribution guidelines](./CONTRIBUTING.md) to get started. We welcome all kinds of contributions, from code enhancements to documentation improvements.
+For contribution guidelines, please refer to the CONTRIBUTING.md file in the parent repository.
 
 ## License
 
-Quash is licensed under the [MIT License](./LICENSE.md).
-
-
-## Contact
-
-For any questions or support, please reach out to us at [support@quashbugs.com](mailto:support@quashbugs.com).
-
----
-
-Thank you for choosing Quash! We look forward to helping you streamline your mobile app testing and bug reporting processes. Let's build something amazing together!
+This project is licensed under the terms specified in the LICENSE file in the parent repository.
