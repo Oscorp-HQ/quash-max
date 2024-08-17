@@ -3,7 +3,7 @@
 Welcome to the Quash Backend repository, part of the [Quash](https://quashbugs.com/) project. This repository contains the code for the Quash Web Backend, a crucial component of your ultimate in-app bug reporting tool. Built by developers for developers, this backend supports the web dashboard in capturing everything you need to start fixing issues right away, including crash logs, session replays, network logs, device information, and much more.
 
 <div align="center">
-    <img src="https://github.com/dhairya-quash/TEST-REPO/assets/161799860/7f7b7ffd-66f4-45d7-b68e-01fcedff0a75" alt="Logo" width=1000>
+    <img src="https://storage.googleapis.com/misc_quash_static/Quash%20Backend%20Banner.png" alt="Logo" width=1000>
 </div>
 <br>
 
@@ -32,16 +32,16 @@ The project is structured into the following layers:
 - **DTO**
 - **Utility**
 
-<div align="center"><img src="https://github.com/dhairya-quash/TEST-REPO/assets/161799860/2f2e2354-0158-4cd8-879b-4d32aeb9ac13" alt="Architecture"></div>
+<div align="center"><img src="https://storage.googleapis.com/misc_quash_static/Backend%20Archtecture.png" alt="Architecture"></div>
 
 ## DB Schema
 
-<div align="center"> <img src="https://github.com/Oscorp-HQ/quash-backend/assets/161799860/9ffd2570-a050-4e39-87a9-4d04800efea5" alt="Flow" width=1000> </div>
+<div align="center"> <img src="https://storage.googleapis.com/misc_quash_static/DB%20Schema.png" alt="Flow" width=1000> </div>
 <br>
 
 ## Report Generation Flow
 
-<div align="center"> <img src="https://github.com/Oscorp-HQ/quash-backend/assets/161799860/65d6b494-4867-43ed-970a-676feb6a7272" alt="Flow" width=1000> </div>
+<div align="center"> <img src="https://storage.googleapis.com/misc_quash_static/Report%20Gen%20Flow.jpg" alt="Flow" width=1000> </div>
 <br>
 
 This guide will provide you steps to setup and configure the Backend for Quash.
@@ -97,7 +97,7 @@ mvn clean install
 **MongoDB Connection String for Database**
 
 ```java
-spring.data.mongodb.uri=mongodb_connection_string
+spring.data.mongodb.uri='mongodb_connection_string'
 ```
 
 JWT configurations -

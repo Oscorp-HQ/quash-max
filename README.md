@@ -136,7 +136,7 @@ Quash Max comprises three main components: the SDK, the backend, and the fronten
 
 ## Contributing
 
-We love contributions! Please read our [contribution guide](https://github.com/dhairya-quash/TEST-REPO/blob/main/Contribution%20Guide.md) to get started. We welcome all kinds of contributions, from code enhancements to documentation improvements.
+We love contributions! Please read our [contribution guide](https://github.com/Oscorp-HQ/quash-max/blob/main/CONTRIBUTING.md) to get started. We welcome all kinds of contributions, from code enhancements to documentation improvements.
 
 ## Developer Setup
 
@@ -171,28 +171,28 @@ We love contributions! Please read our [contribution guide](https://github.com/d
 
 ### Note
 
-> Frontend and SDK have a dependency on Backend to view the data and changes that you make. So please have a running backend before proceeding to run frontend or sdk. You can run max backend by either running the code manually or using a pre-built docker image. Follow the [Backend Setup](https://github.com/dhairya-quash/TEST-REPO/tree/main/backend) for detailed steps.
+> Frontend and SDK have a dependency on Backend to view the data and changes that you make. So please have a running backend before proceeding to run frontend or sdk. You can run max backend by either running the code manually or using a pre-built docker image. Follow the [Backend Setup](https://github.com/Oscorp-HQ/quash-max/blob/main/backend/README.md) for detailed steps.
 
 ### SDK
 
-For detailed SDK instructions, please refer to the individual [android README file](https://github.com/dhairya-quash/TEST-REPO/tree/main/android).
+For detailed SDK instructions, please refer to the individual [android README file](https://github.com/Oscorp-HQ/quash-max/blob/main/android/README.md).
 
 ### Backend
 
-For backend setup and deployment instructions, please refer to the [backend README file](https://github.com/dhairya-quash/TEST-REPO/tree/main/backend).
+For backend setup and deployment instructions, please refer to the [backend README file](https://github.com/Oscorp-HQ/quash-max/blob/main/backend/README.md).
 
 ### Frontend
 
-For frontend setup and deployment instructions, please refer to the [frontend README file](https://github.com/dhairya-quash/TEST-REPO/tree/main/frontend).
+For frontend setup and deployment instructions, please refer to the [frontend README file](https://github.com/Oscorp-HQ/quash-max/blob/main/frontend/README.md).
 
 ## Deployment
-> Note: For deploying SDK, refer to the deplyment section of android - [SDK Installation Guide](https://github.com/dhairya-quash/TEST-REPO/tree/main/android)
+> Note: For deploying SDK, refer to the deplyment section of android - [SDK Installation Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/android/README.md)
 
 For a detailed, step-by-step guide on setting up Quash Max's Frontend and Backend using Docker, whether on your local machine or a hosted VM instance, please refer to our [Quick Start Guide](https://github.com/Oscorp-HQ/quash-max/blob/main/DEPLOYMENT.md).
 
 ## License
 
-Quash is licensed under the [MIT License](./LICENSE).
+Quash is licensed under the [MIT License](https://github.com/Oscorp-HQ/quash-max/blob/main/LICENSE.md).
 
 ## Contact
 
