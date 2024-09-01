@@ -56,51 +56,70 @@ public class IntegrationService {
     }
 
     public Integration createOrUpdateIntegration(String type, User user, String accessToken, String refreshToken) throws Exception {
-
         try {
-            var integrations = integrationRepository.findAllByOrganisation(organisationRepository.findByCreatedBy(user));
-            Boolean integrationExists = !integrations.stream()
-                    .filter(integration -> integration.getIntegrationType().equals(type))
-                    .collect(Collectors.toList()).isEmpty();
-            if (integrationExists) {
-                Optional<Integration> integration = integrations.stream()
-                        .filter(integration1 -> integration1.getIntegrationType().equals(type))
-                        .findFirst();
+            var organisation = getOrganisationByUser(user);
+            var existingIntegration = findExistingIntegration(type, organisation);
 
-                var settings = integration.get().getSettings();
-                if (type.equals(JIRA)) {
-                    settings.put("integrationRefreshToken", refreshToken);
-                    settings.put("expiryTime", getExpiryTime());
-                }
-                settings.put("integrationAccessToken", accessToken);
-
-                integration.get().setSettings(settings);
-                integrationRepository.save(integration.get());
-                return integration.get();
+            if (existingIntegration.isPresent()) {
+                return updateExistingIntegration(existingIntegration.get(), type, accessToken, refreshToken);
+            } else {
+                return createNewIntegration(type, organisation, accessToken, refreshToken);
             }
-
-            var organisation = teamMemberRepository.findByUser(user).getOrganisation();
-            if (organisation == null) {
-                throw new Exception("Organisation not found");
-            }
-            LinkedHashMap<String, Object> settings = new LinkedHashMap<>();
-            if (type.equals(JIRA)) {
-                settings.put("integrationRefreshToken", refreshToken);
-                settings.put("expiryTime", getExpiryTime());
-            }
-            settings.put("integrationAccessToken", accessToken);
-            var integration = Integration.builder()
-                    .integrationType(type)
-                    .settings(settings)
-                    .createdAt(new Date())
-                    .updatedAt(new Date())
-                    .isActive(true)
-                    .organisation(organisation).build();
-            integrationRepository.save(integration);
-            return integration;
         } catch (Exception e) {
-            throw new Exception(e.getMessage());
+            throw new Exception("Error creating or updating integration: " + e.getMessage());
         }
+    }
+
+    private Organisation getOrganisationByUser(User user) throws Exception {
+        var organisation = teamMemberRepository.findByUser(user).getOrganisation();
+        if (organisation == null) {
+            throw new Exception("Organisation not found");
+        }
+        return organisation;
+    }
+
+    private Optional<Integration> findExistingIntegration(String type, Organisation organisation) {
+        var integrations = integrationRepository.findAllByOrganisation(organisation);
+        return integrations.stream()
+                .filter(integration -> integration.getIntegrationType().equals(type))
+                .findFirst();
+    }
+
+    private Integration updateExistingIntegration(Integration integration, String type, String accessToken, String refreshToken) {
+        var settings = integration.getSettings();
+
+        if (type.equals(JIRA)) {
+            settings.put("integrationRefreshToken", refreshToken);
+            settings.put("expiryTime", getExpiryTime());
+        }
+        settings.put("integrationAccessToken", accessToken);
+
+        integration.setSettings(settings);
+        integration.setUpdatedAt(new Date());
+        integrationRepository.save(integration);
+        return integration;
+    }
+
+    private Integration createNewIntegration(String type, Organisation organisation, String accessToken, String refreshToken) {
+        LinkedHashMap<String, Object> settings = new LinkedHashMap<>();
+
+        if (type.equals(JIRA)) {
+            settings.put("integrationRefreshToken", refreshToken);
+            settings.put("expiryTime", getExpiryTime());
+        }
+        settings.put("integrationAccessToken", accessToken);
+
+        var integration = Integration.builder()
+                .integrationType(type)
+                .settings(settings)
+                .createdAt(new Date())
+                .updatedAt(new Date())
+                .isActive(true)
+                .organisation(organisation)
+                .build();
+
+        integrationRepository.save(integration);
+        return integration;
     }
 
     private Date getExpiryTime() {
