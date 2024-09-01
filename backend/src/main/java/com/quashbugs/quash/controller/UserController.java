@@ -32,15 +32,13 @@ public class UserController {
      */
     @GetMapping
     public ResponseEntity<ResponseDTO> getUser(Authentication authentication) {
-        if (authentication != null && authentication.isAuthenticated()) {
+        try {
             User user = (User) authentication.getPrincipal();
-            if (user != null) {
-                return new ResponseEntity<>(new ResponseDTO(true, "User details retrieved successfully", user), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not found", null), HttpStatus.UNAUTHORIZED);
-            }
-        } else {
+            return new ResponseEntity<>(new ResponseDTO(true, "User details retrieved successfully", user), HttpStatus.OK);
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not authenticated", null), HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -52,16 +50,13 @@ public class UserController {
      */
     @GetMapping("/is_verified")
     public ResponseEntity<ResponseDTO> getUserVerified(Authentication authentication) {
-        if (authentication != null && authentication.isAuthenticated()) {
+        try {
             User user = (User) authentication.getPrincipal();
-
-            if (user != null) {
-                return new ResponseEntity<>(new ResponseDTO(true, "User verifcation status retrived", user.isEmailVerified()), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not found", null), HttpStatus.UNAUTHORIZED);
-            }
-        } else {
+            return new ResponseEntity<>(new ResponseDTO(true, "User verification status retrieved", user.isEmailVerified()), HttpStatus.OK);
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not authenticated", null), HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -74,16 +69,14 @@ public class UserController {
      */
     @PatchMapping
     public ResponseEntity<ResponseDTO> updateUser(Authentication authentication, @RequestBody User updatedUser) {
-        if (authentication != null && authentication.isAuthenticated()) {
+        try {
             User user = (User) authentication.getPrincipal();
             userService.updateUser(user, updatedUser);
-            if (user != null) {
-                return new ResponseEntity<>(new ResponseDTO(true, "User updated successfully", user), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(new ResponseDTO(false, "User not found or update failed", null), HttpStatus.NOT_FOUND);
-            }
-        } else {
+            return new ResponseEntity<>(new ResponseDTO(true, "User updated successfully", user), HttpStatus.OK);
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not authenticated", null), HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -95,22 +88,20 @@ public class UserController {
      * @return ResponseEntity with a ResponseDTO indicating the success of the update.
      */
     @PatchMapping("/update-user")
-    public ResponseEntity<ResponseDTO> updateUserForDashboard(Authentication authentication, @RequestBody UpdateUserRequestDTO updateUserRequestDTO) throws Exception {
-        if (authentication != null && authentication.isAuthenticated()) {
+    public ResponseEntity<ResponseDTO> updateUserForDashboard(Authentication authentication, @RequestBody UpdateUserRequestDTO updateUserRequestDTO) {
+        try {
             User user = (User) authentication.getPrincipal();
-            if (user == null) {
-                return new ResponseEntity<>(new ResponseDTO(false, "User not found or update failed", null), HttpStatus.NOT_FOUND);
-            } else {
-                user.setFullName(updateUserRequestDTO.getFullName());
-                user.setUserOrganisationRole(updateUserRequestDTO.getUserOrganisationRole());
-                if (!user.isShouldNavigateToDashboard()) {
-                    user.setShouldNavigateToDashboard(true);
-                }
-                userService.saveUser(user);
-                return new ResponseEntity<>(new ResponseDTO(true, "User updated successfully", user), HttpStatus.OK);
+            user.setFullName(updateUserRequestDTO.getFullName());
+            user.setUserOrganisationRole(updateUserRequestDTO.getUserOrganisationRole());
+            if (!user.isShouldNavigateToDashboard()) {
+                user.setShouldNavigateToDashboard(true);
             }
-        } else {
+            userService.saveUser(user);
+            return new ResponseEntity<>(new ResponseDTO(true, "User updated successfully", user), HttpStatus.OK);
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not authenticated", null), HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -122,23 +113,19 @@ public class UserController {
      */
     @DeleteMapping
     public ResponseEntity<ResponseDTO> deleteUser(Authentication authentication) {
-        if (authentication != null && authentication.isAuthenticated()) {
-            try {
-                System.out.println(authentication);
-                User user = (User) authentication.getPrincipal();
-                boolean deleted = userService.deleteUser(user);
+        try {
+            User user = (User) authentication.getPrincipal();
+            boolean deleted = userService.deleteUser(user);
 
-                if (deleted) {
-                    return new ResponseEntity<>(new ResponseDTO(true, "User deleted successfully", null), HttpStatus.OK);
-                } else {
-                    return new ResponseEntity<>(new ResponseDTO(false, "User delete failed", null), HttpStatus.INTERNAL_SERVER_ERROR);
-                }
-            } catch (Exception e) {
-                return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
+            if (deleted) {
+                return new ResponseEntity<>(new ResponseDTO(true, "User deleted successfully", null), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(new ResponseDTO(false, "User delete failed", null), HttpStatus.INTERNAL_SERVER_ERROR);
             }
-        } else {
-            // User not authenticated or invalid token
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(new ResponseDTO(false, "Invalid token or user not authenticated", null), HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseDTO(false, "An error occurred: " + e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
